@@ -309,6 +309,9 @@ form input{
 form textarea{
     border: 1px solid var(--foreground);
     resize:none;
+    font-size: 1.2em;
+    padding: 5px;
+    color: var(--foreground);
 }
 form button{
     align-self: center;
