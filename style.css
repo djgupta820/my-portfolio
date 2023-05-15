@@ -88,7 +88,6 @@ header{
     min-height: 90vh;
     border: 1px solid #fb5607;
     display: flex;
-    /* position: relative; */
 }
 .data{
     width: 50%;
@@ -243,7 +242,6 @@ h1{
     width: 100%;
     padding: 5px;
     margin-top: 10px;
-    /* border: 1px solid #9b3405; */
 }
 .all-projects{
     width: 100%;
@@ -274,14 +272,12 @@ h1{
 .project:hover{
     transition: 700ms;
     background: linear-gradient(to top, #bb3f05, #ff5100, #f37c46);
-    /* color: white; */
     background-image: url('./images/project-background-image.jpg');
     background-position: center;
     background-size: cover;
 }
 .contact{
     width: 100%;
-    min-height: 90vh;
     margin-top: 20px;
 }
 .form{
