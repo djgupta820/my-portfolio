@@ -246,7 +246,6 @@ h1{
 .all-projects{
     width: 100%;
     min-height: 90vh;
-    border: 1px solid var(--foreground);
     margin: 5px;
     display: flex;
     align-items: center;
