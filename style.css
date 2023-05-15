@@ -8,6 +8,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
+body::-webkit-scrollbar{
+    display: none;
+}
 body{
     background-color: var(--background);
 }
@@ -42,6 +45,7 @@ header{
 #openMenu, #closeMenu{
     font-size: 2em;
     display: none;
+    color: var(--foreground);
 }
 #openMenu{
     position: absolute;
@@ -73,8 +77,152 @@ header{
 #mainMenu a{
     padding: 8px 14px;
 }
+.hero{
+    width: 95%;
+    margin: auto;
+}
+.top{
+    width: 100%;
+    min-height: 90vh;
+    border: 1px solid #fb5607;
+    display: flex;
+    /* position: relative; */
+}
+.data{
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0 14px;
+    gap: 50px;
+    color: var(--foreground);
+    position: relative;
+    overflow: hidden;
+}
+.btn{
+    width: 150px;
+    padding: 8px 14px;
+    color: var(--background);
+    background-color: var(--foreground);
+    border: 1px solid var(--background);
+    box-shadow: 4px 6px 10px var(--foreground);
+}
+.circle{
+    border: 1px solid var(--foreground);
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(to right, #fb5607, #d67142, #e78f66);
+    z-index: -10;
+    position: absolute;
+    left: -100px;
+    bottom: -80px;
+    animation: bounce1 4s linear infinite;
+}
+.circle-s{
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to top, #9b3405, #be4107, #ec753e, #ffa176);
+    border: 1px solid var(--foreground);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    animation: bounce 2s ease-in-out infinite;
+}
+.image{
+    width: 50%;
+    height: 90vh;
+    background-image: url('./images/orange-splash.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image img{
+    height: 80%;
+    width: 80%;
+    border-bottom: 1px solid var(--foreground);
+    border-radius: 50%;
+    animation: img-bounce 4s linear infinite;
+}
+.about{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+}
+.about h1{
+    font-size: 2em;
+    color: var(--foreground);
+}
+.boxes{
+    display: flex;
+    align-items: center;
+}
+.abt-image{
+    width: 50%;
+    background-image: url('./images/splash.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5em;
+}
+.abt-image img{
+    width: 70%;
+}
+.content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    padding: 8px 14px;
+    line-height: 1.1em;
+    font-weight: 500;
+}
+.content ul{
+    list-style:circle;
+    margin-left: 20px;
+    line-height: 1.5em;
+}
+.content p{
+    line-height: 1.5em;
+}
+/* -------------------------  Animations  ------------------------------- */
+@keyframes bounce1{
+    50%{
+        transform: translate(-20px, 30px);
+    }
+}
+@keyframes bounce{
+    50%{
+        transform: translate(0, 20px);
+    }
+}
+@keyframes img-bounce{
+    50%{
+        transform: translate(10px, -20px);
+    }
+}
 
-@media all and (0 < width < 700px){
+/* ---------------  Media Queries  ---------------------------------- */
+@media all and (width < 600px){
+    .circle-s{
+        left: 200px;
+    }
+    .abt-image{
+        width: 100%;
+    }
+}
+
+@media all and (0 < width < 950px){
     .navbar{
         justify-content: space-between;
     }
@@ -120,5 +268,28 @@ header{
     }
     .social{
         width: 80%;
+    }
+    .circle{
+        top: 20px;
+        right: 0;
+    }
+    .top{
+        flex-direction: column;
+    }
+    .data, .image{
+        width: 100%;
+        align-items: center;
+    }
+    .image{
+        height: 80%;
+    }
+    .boxes{
+        flex-direction: column;
+    }
+    .abt-image{
+        width: 100%;
+    }
+    .content{
+        width: 100%;
     }
 }
