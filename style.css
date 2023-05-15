@@ -155,7 +155,7 @@ header{
     width: 100%;
     padding: 10px;
 }
-.about h1{
+h1{
     font-size: 2em;
     color: var(--foreground);
 }
@@ -194,6 +194,45 @@ header{
 }
 .content p{
     line-height: 1.5em;
+}
+.skills{
+    margin-top: 20px;
+    padding: 5px;
+}
+.bars{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.skill{
+    width: 400px;
+    border: 1px solid var(--foreground);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.skill label{
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--foreground);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.skill i{
+    font-size: 2.2em;
+}
+.skill progress{
+    width: 250px;
+    height: 40px;
 }
 /* -------------------------  Animations  ------------------------------- */
 @keyframes bounce1{
