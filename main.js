@@ -10,11 +10,27 @@ let java = document.querySelector('#java')
 let cpp = document.querySelector('#cpp')
 let git = document.querySelector('#git')
 let form = document.getElementById('form')
+let topbtn = document.querySelector('.topbtn')
+
+topbtn.addEventListener('mouseover', ()=>{
+    let tooltip = document.querySelector('#tooltip') 
+    tooltip.style.transition = 'opacity 1s ease-in-out'
+    tooltip.style.display = 'block'
+    setTimeout(()=>{
+        tooltip.style.display = 'none'
+    }, 3000)
+})
 
 document.addEventListener('scroll', ()=>{
     let header = document.getElementsByTagName('header');
     let logo = document.getElementsByClassName('logo')
-    
+    let ttip = document.querySelector('.tooltip')
+
+    if(window.scrollY > 100){
+        ttip.style.display = 'flex'
+    }else{
+        ttip.style.display = 'none'
+    }
     if(window.scrollY > 50){
         header[0].style.transition = '0.5s'
         header[0].style.backgroundColor = '#fb5607'
