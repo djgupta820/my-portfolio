@@ -11,6 +11,35 @@ let cpp = document.querySelector('#cpp')
 let git = document.querySelector('#git')
 let form = document.getElementById('form')
 
+document.addEventListener('scroll', ()=>{
+    let header = document.getElementsByTagName('header');
+    let logo = document.getElementsByClassName('logo')
+    
+    if(window.scrollY > 50){
+        header[0].style.transition = '0.5s'
+        header[0].style.backgroundColor = '#fb5607'
+        openMenu.style.color = '#f5ebe0'
+        logo[0].style.color = '#f5ebe0'
+        changeColor('#f5ebe0')
+    }
+    else{
+        header[0].style.transition = '0.5s'
+        header[0].style.backgroundColor = '#f5ebe0'
+        openMenu.style.color = '#fb5607'
+        logo[0].style.color = '#7209b7'
+        changeColor('#fb5607')
+    }
+})
+
+function changeColor(color){
+    if(document.body.clientWidth > 950){
+        let links = mainMenu.getElementsByTagName('a')
+        for(let i=0; i<links.length; i++){
+            links[i].style.color = color
+        }
+    }
+}
+
 openMenu.addEventListener('click', ()=>{
     mainMenu.style.display = 'flex';
     mainMenu.style.right = '0';
@@ -53,7 +82,7 @@ cpp.addEventListener('mouseover', (e)=>{
 })
 
 function moveProgress(val, element){
-    console.log(element)
+    // console.log(element)
     var id = setInterval(move, 100)
     let i = 0
     function move(){
