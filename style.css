@@ -375,12 +375,19 @@ footer{
     }
 }
 
-@media all and (0 < width < 950px){
+@media all and (0 < width < 450px){
+    .logo{
+        font-size: 1.3em;
+    }
+}
+
+@media all and (width < 950px){
     .navbar{
         justify-content: space-between;
     }
     .logo{
-        width: 60%;
+        width: 50%;
+        /* font-size: 1.2em; */
     }
     #mainMenu{
         background-color: var(--foreground);
